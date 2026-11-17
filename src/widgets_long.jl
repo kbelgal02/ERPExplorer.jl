@@ -176,7 +176,7 @@ function topoplot_series_widget(summary, positions; size = (700, 220),
     height = max(220, Int(round(size[2])), 160 * group_count)
     fig = Figure(size = (width, height))
     defaults = (; rasterize_heatmaps = false,   # no effect in WGLMakie; avoids Makie ≥0.24.16 crash in UnfoldMakie
-    axis = (; xlabel = "Time windows (s)", title = ""),
+        axis = (; xlabel = "Time windows (s)", title = ""),
         visual = (; label_scatter = false, enlarge = 1.08, interp_resolution = (128, 128)))
     normalized = validate_series_options(options)
     visual = merge(defaults.visual, get(normalized, :visual, (;)))
